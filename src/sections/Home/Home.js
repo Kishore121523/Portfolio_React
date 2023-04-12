@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import anime from "animejs/lib/anime.es.js";
+import { motion } from "framer-motion";
 
 import "./Home.scss";
 
@@ -43,7 +44,12 @@ const Home = () => {
 
   return (
     <section id="home">
-      <div className="nameDiv">
+      <motion.div
+        className="nameDiv"
+        drag
+        dragSnapToOrigin
+        whileDrag={{ scale: 1.1 }}
+      >
         <div className="nameDiv1">
           <div className="content">
             <p className="greeting">Hi, I am</p>
@@ -55,7 +61,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

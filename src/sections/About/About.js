@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import anime from "animejs/lib/anime.es.js";
+import { motion } from "framer-motion";
 
 import resume from "../../assets/Resume.pdf";
 
@@ -68,7 +69,16 @@ const About = () => {
           <div className="nameAbout">
             <p className="about-name">Kishore</p>
             <div className="avatar">
-              <img className="avatarImg" src={avatar} alt="Avatar" />
+              <motion.img
+                className="avatarImg"
+                src={avatar}
+                alt="Avatar"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                drag
+                dragSnapToOrigin
+                whileDrag={{ scale: 1.3 }}
+              />
             </div>
           </div>
 

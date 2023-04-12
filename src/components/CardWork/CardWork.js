@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const CardWork = ({
   category,
@@ -13,9 +14,16 @@ const CardWork = ({
   externalLink,
 }) => {
   return (
-    <div className="card-outer">
+    <motion.div
+      className="card-outer"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      drag
+      dragSnapToOrigin
+      whileDrag={{ opacity: 0.5 }}
+    >
       <div className="divImg">
-        <img src={image} alt="" />
+        <img src={image} alt="work-img" />
 
         {externalLink ? (
           <div className="middle">
@@ -24,7 +32,7 @@ const CardWork = ({
             </a>
             <a href={github} target="_blank" rel="noreferrer">
               <FontAwesomeIcon className="workIcon" icon={faGithub} />
-            </a>{" "}
+            </a>
           </div>
         ) : (
           <div className="middle"></div>
@@ -39,7 +47,7 @@ const CardWork = ({
         <p className="work-content-head">{heading}</p>
         <p className="work-content-desc">{desc}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

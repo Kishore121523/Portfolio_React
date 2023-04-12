@@ -3,6 +3,7 @@ import "./Contact.scss";
 import NavSocialMedia from "../../components/Navbar/NavSocialMedia";
 import { useInView } from "react-intersection-observer";
 import anime from "animejs/lib/anime.es.js";
+import { motion } from "framer-motion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -15,26 +16,16 @@ const Contact = () => {
   useEffect(() => {
     let contactAnimation = anime.timeline({
       easing: "easeOutExpo",
-      duration: 5000,
+      duration: 4000,
       autoplay: false,
     });
-
-    contactAnimation.add(
-      {
-        targets: ".contact-head",
-        opacity: 1,
-        easing: "easeOutBack",
-        duration: 700,
-      },
-      "-=100"
-    );
 
     contactAnimation.add(
       {
         targets: ".contact-phone",
         opacity: 1,
         easing: "easeOutBack",
-        duration: 500,
+        duration: 200,
       },
       "-=100"
     );
@@ -44,7 +35,7 @@ const Contact = () => {
         targets: ".contact-logo",
         opacity: 1,
         easing: "easeOutBack",
-        duration: 100,
+        duration: 800,
       },
       "-=500"
     );
@@ -55,7 +46,7 @@ const Contact = () => {
         opacity: 1,
         easing: "easeInOutBack",
         translateY: ["100%", "0%"],
-        duration: 700,
+        duration: 800,
       },
       "-=100"
     );
@@ -65,7 +56,7 @@ const Contact = () => {
         easing: "easeOutBack",
         opacity: 1,
         delay: anime.stagger(200),
-        duration: 700,
+        duration: 800,
       },
       "-=100"
     );
@@ -77,7 +68,7 @@ const Contact = () => {
         opacity: 1,
         delay: anime.stagger(500),
         direction: "reverse",
-        duration: 700,
+        duration: 800,
       },
       "-=200"
     );
@@ -88,7 +79,7 @@ const Contact = () => {
         opacity: 1,
         delay: anime.stagger(500),
         direction: "reverse",
-        duration: 700,
+        duration: 800,
       },
       "-=200"
     );
@@ -97,8 +88,8 @@ const Contact = () => {
         targets: ".contact-logo svg path",
         strokeDashoffset: [anime.setDashoffset, 0],
         easing: "easeInOutQuad",
-        duration: 3000,
-        delay: anime.stagger(2000),
+        duration: 1000,
+        delay: anime.stagger(1000),
         direction: "alternate",
         autoplay: false,
       },
@@ -109,11 +100,11 @@ const Contact = () => {
       {
         targets: ".contact-logo svg path",
         easing: "easeInOutQuad",
-        duration: 3000,
+        duration: 1000,
         fill: "#adadad",
         opacity: 1,
         stroke: "#363636",
-        delay: anime.stagger(3000),
+        delay: anime.stagger(1000),
         direction: "alternate",
         autoplay: false,
       },
@@ -131,7 +122,14 @@ const Contact = () => {
       <div className="wrapper">
         <div className="contact-content">
           <div className="contact-head-div">
-            <div className="contact-logo">
+            <motion.div
+              className="contact-logo"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              drag
+              dragSnapToOrigin
+              whileDrag={{ scale: 1.3 }}
+            >
               <svg
                 viewBox="0 0 101.17 129.44"
                 fill="none"
@@ -155,7 +153,7 @@ const Contact = () => {
                   </clipPath>
                 </defs>
               </svg>
-            </div>
+            </motion.div>
 
             <div className="contact-head">
               <p>Let's Get in Touch</p>
