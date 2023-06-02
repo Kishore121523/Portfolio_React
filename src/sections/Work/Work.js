@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import "./Work.scss";
 import anime from "animejs/lib/anime.es.js";
 import { useInView } from "react-intersection-observer";
+import { motion, useDomEvent } from "framer-motion";
 
 import {
   Notezy,

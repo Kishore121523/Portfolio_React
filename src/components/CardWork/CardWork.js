@@ -18,9 +18,6 @@ const CardWork = ({
       className="card-outer"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      drag
-      dragSnapToOrigin
-      whileDrag={{ opacity: 0.5 }}
     >
       <div className="divImg">
         <img src={image} alt="work-img" />

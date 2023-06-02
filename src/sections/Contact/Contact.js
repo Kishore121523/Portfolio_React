@@ -20,6 +20,13 @@ const Contact = () => {
       autoplay: false,
     });
 
+    contactAnimation.add({
+      targets: ".contact-head",
+      opacity: 1,
+      easing: "easeOutBack",
+      duration: 2000,
+    });
+
     contactAnimation.add(
       {
         targets: ".contact-phone",
