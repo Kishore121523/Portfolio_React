@@ -124,6 +124,7 @@
                         }
                         .role {
                             font-size: 0.8rem;
+                            margin-bottom: 5px;
                         }
                     }
                 }
@@ -450,6 +451,9 @@
                                 color: var(--peach);
                                 font-size: 2rem;
                                 font-weight: bold;
+                            }
+                            .email-content {
+                                font-size: 1.1rem;
                             }
                         }
                     }
