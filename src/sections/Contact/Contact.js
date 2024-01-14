@@ -16,15 +16,37 @@ const Contact = () => {
   useEffect(() => {
     let contactAnimation = anime.timeline({
       easing: "easeOutExpo",
-      duration: 4000,
+      duration: 1000,
+      autoplay: false,
+      // loop: true,
+    });
+    contactAnimation.add({
+      targets: ".contact-logo",
+      opacity: 1,
+      easing: "easeOutBack",
+      duration: 1000,
+    });
+
+    contactAnimation.add({
+      targets: ".contact-logo svg path",
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: "easeInOutQuad",
+      duration: 1000,
+      delay: anime.stagger(1000),
+      direction: "alternate",
       autoplay: false,
     });
 
     contactAnimation.add({
-      targets: ".contact-head",
+      targets: ".contact-logo svg path",
+      easing: "easeInOutQuad",
+      duration: 1000,
+      fill: "#adadad",
       opacity: 1,
-      easing: "easeOutBack",
-      duration: 2000,
+      stroke: "#363636",
+      delay: anime.stagger(1000),
+      direction: "alternate",
+      autoplay: false,
     });
 
     contactAnimation.add(
@@ -32,91 +54,29 @@ const Contact = () => {
         targets: ".contact-phone",
         opacity: 1,
         easing: "easeOutBack",
-        duration: 200,
+        duration: 400,
       },
-      "-=100"
+      "-50"
     );
 
-    contactAnimation.add(
-      {
-        targets: ".contact-logo",
-        opacity: 1,
-        easing: "easeOutBack",
-        duration: 800,
-      },
-      "-=500"
-    );
+    contactAnimation.add({
+      targets: ".contact-social-media .fontAwesomeIconContact",
+      easing: "easeOutBack",
+      opacity: 1,
+      delay: anime.stagger(500),
+      direction: "reverse",
+      duration: 200,
+    });
 
-    contactAnimation.add(
-      {
-        targets: ".contactNameDiv1",
-        opacity: 1,
-        easing: "easeInOutBack",
-        translateY: ["100%", "0%"],
-        duration: 800,
-      },
-      "-=100"
-    );
-    contactAnimation.add(
-      {
-        targets: ".contactNameDiv1 div",
-        easing: "easeOutBack",
-        opacity: 1,
-        delay: anime.stagger(200),
-        duration: 800,
-      },
-      "-=100"
-    );
+    contactAnimation.add({
+      targets: ".copyright p",
+      easing: "easeOutBack",
+      opacity: 1,
+      delay: anime.stagger(500),
+      direction: "reverse",
+      duration: 400,
+    });
 
-    contactAnimation.add(
-      {
-        targets: ".contact-social-media .fontAwesomeIconContact",
-        easing: "easeOutBack",
-        opacity: 1,
-        delay: anime.stagger(500),
-        direction: "reverse",
-        duration: 800,
-      },
-      "-=200"
-    );
-    contactAnimation.add(
-      {
-        targets: ".copyright p",
-        easing: "easeOutBack",
-        opacity: 1,
-        delay: anime.stagger(500),
-        direction: "reverse",
-        duration: 800,
-      },
-      "-=200"
-    );
-    contactAnimation.add(
-      {
-        targets: ".contact-logo svg path",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: "easeInOutQuad",
-        duration: 1000,
-        delay: anime.stagger(1000),
-        direction: "alternate",
-        autoplay: false,
-      },
-      "-=2000"
-    );
-
-    contactAnimation.add(
-      {
-        targets: ".contact-logo svg path",
-        easing: "easeInOutQuad",
-        duration: 1000,
-        fill: "#adadad",
-        opacity: 1,
-        stroke: "#363636",
-        delay: anime.stagger(1000),
-        direction: "alternate",
-        autoplay: false,
-      },
-      "-=4000"
-    );
     if (isIntersectingContact) {
       contactAnimation.play();
     } else {
@@ -161,10 +121,10 @@ const Contact = () => {
                 </defs>
               </svg>
             </motion.div>
-
+            {/* 
             <div className="contact-head">
               <p>Let's Get in Touch</p>
-            </div>
+            </div> */}
 
             <div className="contact-top">
               <div className="contact-phone">
@@ -173,7 +133,7 @@ const Contact = () => {
                   icon={faPhone}
                 />
                 <p className="phone-head">Phone</p>
-                <p className="phone-content text-muted">+91 7373219696</p>
+                <p className="phone-content text-muted">+1 8073581508</p>
               </div>
             </div>
           </div>
