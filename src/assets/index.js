@@ -1,7 +1,7 @@
 export { default as Notezy } from "./WebDev/notezy.jpg";
 export { default as MathConf } from "./WebDev/MathConf.jpg";
 export { default as donate } from "./WebDev/donate.jpg";
-export { default as instaPage } from "./WebDev/instaPage.jpg";
+export { default as githubFinder } from "./WebDev/githubFinder.png";
 export { default as riceMill } from "./WebDev/riceMill.jpg";
 export { default as travel } from "./WebDev/travel.jpg";
 export { default as weathery } from "./WebDev/weathery.jpg";

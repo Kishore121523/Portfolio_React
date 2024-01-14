@@ -8,7 +8,7 @@ import {
   Notezy,
   MathConf,
   donate,
-  instaPage,
+  githubFinder,
   travel,
   weathery,
   riceMill,
@@ -249,13 +249,14 @@ const Work = () => {
                 image={donate}
                 externalLink={true}
               ></CardWork>
+
               <CardWork
-                github="https://github.com/Kishore121523/code.kish_dev_CodeExamples"
-                liveLink="#"
-                heading="WebDev Basics"
-                desc="All the basics related to web-dev is being constantly uploaded in this repository"
+                liveLink="https://kishore121523.github.io/Travel/"
+                github="https://github.com/Kishore121523/Travel"
+                heading="Travillie"
+                desc="Webpage designed for a travel agency (Demo Project)s"
                 category="WebDev"
-                image={instaPage}
+                image={travel}
                 externalLink={true}
               ></CardWork>
               <CardWork
@@ -268,21 +269,21 @@ const Work = () => {
                 externalLink={true}
               ></CardWork>
               <CardWork
+                github="https://github.com/Kishore121523/Github-Users-Finder"
+                liveLink="https://kishore121523.github.io/Github-Users-Finder/"
+                heading="Github Profile Finder"
+                desc="Displays the name and general information of a user signed up on Github."
+                category="WebDev"
+                image={githubFinder}
+                externalLink={true}
+              ></CardWork>
+              <CardWork
                 liveLink="https://kishore121523.github.io/Professional-Website---Rice-Mill-Association/"
                 github="https://github.com/Kishore121523/Professional-Website---Rice-Mill-Association"
                 heading="Rice Mill Site"
                 desc="An CRUD Based Note Taking Exntension with modern UI"
                 category="WebDev"
                 image={riceMill}
-                externalLink={true}
-              ></CardWork>
-              <CardWork
-                liveLink="https://kishore121523.github.io/Travel/"
-                github="https://github.com/Kishore121523/Travel"
-                heading="Travillie"
-                desc="Webpage designed for a travel agency (Demo Project)s"
-                category="WebDev"
-                image={travel}
                 externalLink={true}
               ></CardWork>
             </div>
